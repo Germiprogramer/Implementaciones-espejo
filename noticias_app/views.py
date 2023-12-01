@@ -12,6 +12,7 @@ def noticias(request):
         if form.is_valid():
             # Obtiene el tema de las noticias
             theme = form.cleaned_data['theme']
+            
 
             # Obtiene la fecha actual
             current_date = datetime.now()
