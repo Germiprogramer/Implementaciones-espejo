@@ -36,6 +36,16 @@
 
   <h1>Últimas Noticias</h1>
 
+  <h2>Buscar noticias por tema</h2>
+
+  <form method="post" action="{% url 'noticias' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Buscar</button>
+  </form>
+
+  <hr>
+
   <div class="noticias">
     {% for article in filtered_news %}
       <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
