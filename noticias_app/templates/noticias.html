@@ -1,0 +1,38 @@
+<!-- noticias_app/templates/noticias_app/noticias.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h2 {
+      color: #333;
+      cursor: pointer;
+    }
+
+    h2:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Últimas Noticias</h1>
+
+  <div class="noticias">
+    {% for article in filtered_news %}
+      <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+      <p>Publicado en: {{ article.publishedAt }}</p>
+      <hr>
+    {% endfor %}
+  </div>
+
+</body>
+</html>
